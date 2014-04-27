@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Shortcut functions &mdash; Bambu Mail 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Bambu Mail 2.0 documentation" href="index.html" />
+    <link rel="next" title="Email backends" href="backends.html" />
+    <link rel="prev" title="Newsletter providers" href="newsletter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="backends.html" title="Email backends"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="newsletter.html" title="Newsletter providers"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Bambu Mail 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-bambu_mail.shortcuts">
+<span id="shortcut-functions"></span><h1>Shortcut functions<a class="headerlink" href="#module-bambu_mail.shortcuts" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="bambu_mail.shortcuts.render_to_mail">
+<tt class="descclassname">bambu_mail.shortcuts.</tt><tt class="descname">render_to_mail</tt><big>(</big><em>subject</em>, <em>template</em>, <em>context</em>, <em>recipient</em>, <em>fail_silently=False</em><big>)</big><a class="headerlink" href="#bambu_mail.shortcuts.render_to_mail" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>subject</strong> &#8211; The subject line of the email</li>
+<li><strong>template</strong> &#8211; The name of the template to render the HTML email with</li>
+<li><strong>context</strong> &#8211; The context data to pass to the template</li>
+<li><strong>recipient</strong> &#8211; The email address or <tt class="docutils literal"><span class="pre">django.contrib.auth.User</span></tt> object to send the email to</li>
+<li><strong>fail_silently</strong> &#8211; Set to <tt class="docutils literal"><span class="pre">True</span></tt> to avoid errors being raised by the sender</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This function acts as an alias to one of two functions, depending on your setup. If you use
+<a class="reference external" href="http://www.celeryproject.org/">Celery</a>,
+this function will perform the compositing and sending of the email asynchronously. Otherwise
+the process will take place on the same thread.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="bambu_mail.shortcuts.subscribe">
+<tt class="descclassname">bambu_mail.shortcuts.</tt><tt class="descname">subscribe</tt><big>(</big><em>email</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#bambu_mail.shortcuts.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>email</strong> &#8211; The email address of the user to add to the mailing list</li>
+<li><strong>kwargs</strong> &#8211; Keyword arguments to pass to the individual newsletter provider</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This function acts as an alias to one of two functions, depending on your setup. If you use
+<a class="reference external" href="http://www.celeryproject.org/">Celery</a>,
+this function will perform the API calls asynchronously. Otherwise the process will take place
+on the same thread.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="newsletter.html"
+                        title="previous chapter">Newsletter providers</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="backends.html"
+                        title="next chapter">Email backends</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/shortcuts.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="backends.html" title="Email backends"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="newsletter.html" title="Newsletter providers"
+             >previous</a> |</li>
+        <li><a href="index.html">Bambu Mail 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Steadman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Bambu Mail &mdash; Bambu Mail 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Bambu Mail 2.0 documentation" href="#" />
+    <link rel="next" title="Settings" href="settings.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Settings"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Bambu Mail 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="bambu-mail">
+<h1>Bambu Mail<a class="headerlink" href="#bambu-mail" title="Permalink to this headline">¶</a></h1>
+<p>A shortcut function for sending template-based emails in HTML and
+plain-text format, and subscribing users to newsletters</p>
+<div class="section" id="about-bambu-mail">
+<h2>About Bambu Mail<a class="headerlink" href="#about-bambu-mail" title="Permalink to this headline">¶</a></h2>
+<p>This package allows for the quick and simple sending of emails in both
+plain-text and HTML format, without needing to specify both. A base HTML
+template is supplied which can be overridden. Markdown is the expected
+format for the email body, which means it gets transformed into HTML but
+left alone for the text-only version.</p>
+<p>In addition, Bambu Mail has a simple provider system for newsletter
+subscriptions, allowing new signups to be automatically added to a
+mailing list (should they choose to). The only current provider in this
+package is for Mailchimp, but the base type is easily extensible.</p>
+<p>Finally, Bambu Mail provides a Postmark email backend, based on the
+<a class="reference external" href="https://github.com/dstufft/django-postmark">django-postmark</a> but with
+a slight bug fix.</p>
+</div>
+<div class="section" id="about-bambu-tools-2-0">
+<h2>About Bambu Tools 2.0<a class="headerlink" href="#about-bambu-tools-2-0" title="Permalink to this headline">¶</a></h2>
+<p>This is part of a toolset called Bambu Tools. It&#8217;s being moved from a
+namespace of <tt class="docutils literal"><span class="pre">bambu</span></tt> to its own &#8216;root-level&#8217; package, along with all
+the other tools in the set. If you&#8217;re upgrading from a version prior to
+2.0, please make sure to update your code to use <tt class="docutils literal"><span class="pre">bambu_mail</span></tt> rather
+than <tt class="docutils literal"><span class="pre">bambu.mail</span></tt>.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Install the package via Pip:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install bambu-mail
+</pre></div>
+</div>
+<p>Add it to your <tt class="docutils literal"><span class="pre">INSTALLED_APPS</span></tt> list along with Bambu Markup:</p>
+<div class="highlight-python"><div class="highlight"><pre>INSTALLED_APPS = (
+    ...
+    &#39;bambu_mail&#39;,
+    &#39;bambu_markup&#39;
+)
+</pre></div>
+</div>
+<p>Add <tt class="docutils literal"><span class="pre">bambu_mail.urls</span></tt> to your URLconf:</p>
+<div class="highlight-python"><div class="highlight"><pre>urlpatterns = patterns(&#39;&#39;,
+    ...
+    url(r&#39;^mail/&#39;, include(&#39;bambu_mail.urls&#39;)),
+)
+</pre></div>
+</div>
+</div>
+<div class="section" id="questions-or-suggestions">
+<h2>Questions or suggestions?<a class="headerlink" href="#questions-or-suggestions" title="Permalink to this headline">¶</a></h2>
+<p>Find me on Twitter (&#64;iamsteadman) or <a class="reference external" href="http://steadman.io/">visit my blog</a>.</p>
+</div>
+</div>
+<div class="section" id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="settings.html#newsletter-settings">Newsletter settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html#postmark-settings">Postmark settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="newsletter.html">Newsletter providers</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="api-reference">
+<h1>API reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="shortcuts.html">Shortcut functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backends.html">Email backends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bambu Mail</a><ul>
+<li><a class="reference internal" href="#about-bambu-mail">About Bambu Mail</a></li>
+<li><a class="reference internal" href="#about-bambu-tools-2-0">About Bambu Tools 2.0</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#questions-or-suggestions">Questions or suggestions?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contents">Contents</a></li>
+<li><a class="reference internal" href="#api-reference">API reference</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="settings.html"
+                        title="next chapter">Settings</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Settings"
+             >next</a> |</li>
+        <li><a href="#">Bambu Mail 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Steadman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
