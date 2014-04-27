@@ -11,7 +11,8 @@ setup(
     long_description = open(path.join(path.dirname(__file__), 'README')).read(),
     install_requires = [
         'Django>=1.4',
-        'bambu-markup'
+        'bambu-markup',
+        'httplib2'
     ],
     packages = [
         'bambu_mail',
