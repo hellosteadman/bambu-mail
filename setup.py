@@ -1,9 +1,10 @@
 #!/usr/bin/env python
-from distutils.core import setup
+from setuptools import setup
+from os import path
 
 setup(
     name = 'bambu-mail',
-    version = '2.0',
+    version = '2.1',
     description = 'A shortcut function for sending template-based emails in HTML and plain-text format',
     author = 'Steadman',
     author_email = 'mark@steadman.io',
@@ -11,7 +12,7 @@ setup(
     long_description = open(path.join(path.dirname(__file__), 'README')).read(),
     install_requires = [
         'Django>=1.4',
-        'bambu-markup',
+        'bambu-markup>=2.0',
         'httplib2'
     ],
     packages = [

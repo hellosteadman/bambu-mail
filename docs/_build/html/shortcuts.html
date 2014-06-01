@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Shortcut functions &mdash; Bambu Mail 2.0 documentation</title>
+    <title>Shortcut functions &mdash; Bambu Mail 2.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2.0',
+        VERSION:     '2.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Bambu Mail 2.0 documentation" href="index.html" />
+    <link rel="top" title="Bambu Mail 2.1 documentation" href="index.html" />
     <link rel="next" title="Email backends" href="backends.html" />
     <link rel="prev" title="Newsletter providers" href="newsletter.html" /> 
   </head>
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="newsletter.html" title="Newsletter providers"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Bambu Mail 2.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Bambu Mail 2.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -56,7 +56,7 @@
 <span id="shortcut-functions"></span><h1>Shortcut functions<a class="headerlink" href="#module-bambu_mail.shortcuts" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="bambu_mail.shortcuts.render_to_mail">
-<tt class="descclassname">bambu_mail.shortcuts.</tt><tt class="descname">render_to_mail</tt><big>(</big><em>subject</em>, <em>template</em>, <em>context</em>, <em>recipient</em>, <em>fail_silently=False</em><big>)</big><a class="headerlink" href="#bambu_mail.shortcuts.render_to_mail" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">bambu_mail.shortcuts.</tt><tt class="descname">render_to_mail</tt><big>(</big><em>subject</em>, <em>template</em>, <em>context</em>, <em>recipient</em>, <em>fail_silently=False</em>, <em>headers=None</em><big>)</big><a class="headerlink" href="#bambu_mail.shortcuts.render_to_mail" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -67,6 +67,7 @@
 <li><strong>context</strong> &#8211; The context data to pass to the template</li>
 <li><strong>recipient</strong> &#8211; The email address or <tt class="docutils literal"><span class="pre">django.contrib.auth.User</span></tt> object to send the email to</li>
 <li><strong>fail_silently</strong> &#8211; Set to <tt class="docutils literal"><span class="pre">True</span></tt> to avoid errors being raised by the sender</li>
+<li><strong>headers</strong> &#8211; An optional dictionary of email headers</li>
 </ul>
 </td>
 </tr>
@@ -150,7 +151,7 @@ on the same thread.</p>
         <li class="right" >
           <a href="newsletter.html" title="Newsletter providers"
              >previous</a> |</li>
-        <li><a href="index.html">Bambu Mail 2.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Bambu Mail 2.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
