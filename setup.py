@@ -4,14 +4,14 @@ from os import path
 
 setup(
     name = 'bambu-mail',
-    version = '2.1',
+    version = '3.0',
     description = 'A shortcut function for sending template-based emails in HTML and plain-text format',
     author = 'Steadman',
     author_email = 'mark@steadman.io',
     url = 'https://github.com/iamsteadman/bambu-mail',
     long_description = open(path.join(path.dirname(__file__), 'README')).read(),
     install_requires = [
-        'Django>=1.4',
+        'Django>=1.8',
         'bambu-markup>=2.0',
         'httplib2'
     ],
