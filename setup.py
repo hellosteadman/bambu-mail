@@ -12,7 +12,7 @@ setup(
     long_description = open(path.join(path.dirname(__file__), 'README')).read(),
     install_requires = [
         'Django>=1.8',
-        'bambu-markup>=2.0',
+        'bambu-markup>=3.0',
         'httplib2'
     ],
     packages = [
