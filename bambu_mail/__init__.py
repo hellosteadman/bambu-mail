@@ -1,3 +1,3 @@
 from bambu_mail.shortcuts import render_to_mail, subscribe
 
-__version__ = '3.0'
+__version__ = '3.1'

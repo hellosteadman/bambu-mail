@@ -9,7 +9,7 @@ from django.utils.importlib import import_module
 def render_to_mail_task(subject, template, context, recipient, fail_silently = False, headers = None):
     if headers is None:
         headers = {}
-    
+
     from_email = getattr(settings, 'DEFAULT_FROM_EMAIL')
     site = Site.objects.get_current()
 
@@ -64,11 +64,11 @@ def render_to_mail_task(subject, template, context, recipient, fail_silently = F
     ctx = {
         'MEDIA_URL': media_url,
         'STATIC_URL': static_url,
-        'SITE': site,
-        'template': template
+        'SITE': site
     }
 
     ctx.update(context)
+    ctx['body'] = render_to_string(template, ctx)
 
     email = EmailMultiAlternatives(
         subject,
