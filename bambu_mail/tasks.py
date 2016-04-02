@@ -1,12 +1,13 @@
 import logging
 from django.template.loader import render_to_string
 from django.core.mail import EmailMultiAlternatives
-from django.contrib.auth.models import User
-from django.contrib.sites.models import Site
 from django.conf import settings
 from importlib import import_module
 
 def render_to_mail_task(subject, template, context, recipient, fail_silently = False, headers = None):
+    from django.contrib.auth.models import User
+    from django.contrib.sites.models import Site
+
     if headers is None:
         headers = {}
 

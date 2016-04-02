@@ -4,7 +4,7 @@ from os import path
 
 setup(
     name = 'bambu-mail',
-    version = '3.2',
+    version = '3.3',
     description = 'A shortcut function for sending template-based emails in HTML and plain-text format',
     author = 'Steadman',
     author_email = 'mark@steadman.io',
