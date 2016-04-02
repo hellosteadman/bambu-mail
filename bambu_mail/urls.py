@@ -1,5 +1,6 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
+from bambu_mail.views import subscribe
 
-urlpatterns = patterns('bambu_mail.views',
-    url(r'^subscirbe/$', 'subscribe', name = 'newsletter_subscribe')
+urlpatterns = (
+    url(r'^subscirbe/$', subscribe, name = 'newsletter_subscribe'),
 )
